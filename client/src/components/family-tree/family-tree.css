@@ -1,0 +1,14 @@
+/* Gender icons - twice the size and positioned in top-left with margin */
+.male-icon, .female-icon {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size: 60px;
+  text-anchor: start;
+}
+
+/* Centered name */
+.name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-anchor: middle;
+}

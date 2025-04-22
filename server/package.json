@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "d3-dtree": "^2.4.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "openai": "^4.95.1"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
