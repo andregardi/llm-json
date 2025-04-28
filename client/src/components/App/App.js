@@ -10,7 +10,13 @@ function App() {
 
   useEffect(() => {
     if (response) {
-      setFamilyData(JSON.parse(response));
+      try {
+        const parsedData = JSON.parse(response);
+        setFamilyData(parsedData);
+      } catch (error) {
+        console.error("Error parsing response:", error);
+        setFamilyData([]);
+      }
     }
   }, [response]);
 
@@ -18,7 +24,7 @@ function App() {
     <div className="App">
       <div className="app-content">
         <InputForm loading={loading} familyData={familyData} fetchOpenAI={fetchOpenAI} />
-        <FamilyTree familyData={familyData} />
+        <FamilyTree familyData={familyData} loading={loading} />
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ function convertToBalkanFamilyTree(familyData) {
   return formattedData;
 }
 
-export const FamilyTree = ({ familyData }) => {
+export const FamilyTree = ({ familyData, loading }) => {
   const treeRef = useRef(null);
   const hasData = familyData && familyData.length > 0;
 
@@ -60,9 +60,18 @@ export const FamilyTree = ({ familyData }) => {
 
   return (
     <div className="family-tree-container">
-      {hasData ? (
+      {loading && (
+        <div className="family-tree-loading">
+          <div className="loading-spinner"></div>
+          <p className="loading-text">Generating your family tree...</p>
+        </div>
+      )}
+      
+      {!loading && hasData && (
         <div className="family-tree-wrapper" ref={treeRef}></div>
-      ) : (
+      )}
+      
+      {!loading && !hasData && (
         <div className="family-tree-empty">
           <div className="family-tree-empty-icon">👪</div>
           <p className="family-tree-empty-text">

@@ -5,14 +5,14 @@ const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
-async function callOpenAI(prompt, familyData) {
+async function callOpenAI(userMessage, currentFamily) {
     console.log(instructions);
     const response = await client.responses.create({
         model: 'gpt-4.1-mini',
         input: `
             {
-                "userMessage": "${prompt}",
-                "currentFamily": ${JSON.stringify(familyData)}
+                "userMessage": "${userMessage}",
+                "currentFamily": ${JSON.stringify(currentFamily)}
             }
         `,
         instructions: instructions

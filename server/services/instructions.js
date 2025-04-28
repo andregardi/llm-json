@@ -14,7 +14,6 @@ You are a family tree editor. You will receive instructions to modify a family t
   "gender": "male/female",
   "mid?": mother_id,
   "fid?": father_id,
-  "image?": "url"
 }
 
 3. Processing rules:
